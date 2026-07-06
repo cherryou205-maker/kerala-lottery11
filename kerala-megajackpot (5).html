@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Kerala Mega Jackpot – Official Lottery</title>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px}
+body{font-family:'Inter',sans-serif;background:#0d1b2e;color:#fff;min-height:100vh;padding-bottom:80px;overflow-x:hidden}
+
+/* ── RED TOP BAR ── */
+.top-bar{
+  background:#c0392b;
+  padding:12px 16px;
+  display:flex;align-items:center;gap:10px;
+  font-weight:700;font-size:14px;letter-spacing:.5px;
+  position:sticky;top:0;z-index:100;
+}
+.top-bar-dot{width:12px;height:12px;border-radius:50%;background:#ff6b6b;flex-shrink:0;animation:blink 1s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:.4}50%{opacity:1}}
+
+/* ── MAIN WRAP ── */
+.wrap{max-width:480px;margin:0 auto;padding:0 16px}
+
+/* ── HERO ── */
+.hero{text-align:center;padding:28px 0 20px}
+.crown{font-size:52px;display:block;margin-bottom:8px;animation:float 3s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.hero-title{font-family:'Merriweather',serif;font-size:clamp(30px,8vw,42px);font-weight:900;color:#d4af37;line-height:1.1;margin-bottom:8px}
+.hero-sub{font-size:11px;letter-spacing:3px;color:rgba(255,255,255,.45);text-transform:uppercase;line-height:1.8;margin-bottom:16px}
+
+/* ── PRIZE PILL ── */
+.prize-pill{
+  display:inline-flex;align-items:center;gap:10px;
+  background:linear-gradient(135deg,#d4af37,#c8920a);
+  border-radius:50px;padding:12px 28px;
+  font-weight:700;font-size:18px;color:#000;margin-bottom:24px;
+  box-shadow:0 4px 20px rgba(212,175,55,.4);
+}
+
+/* ── COUNTDOWN ── */
+.cd-wrap{margin-bottom:18px}
+.cd-label{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:700;
+  letter-spacing:2px;color:#e74c3c;text-transform:uppercase;margin-bottom:10px}
+.cd-label::before{content:'';width:9px;height:9px;border-radius:50%;background:#e74c3c;
+  display:inline-block;flex-shrink:0;animation:blink 1s ease-in-out infinite}
+.cd-boxes{display:flex;align-items:center;justify-content:center;gap:8px}
+.cd-box{background:#1a2a3a;border-radius:10px;padding:12px 8px;text-align:center;flex:1;min-width:70px;max-width:90px}
+.cd-num{font-family:'Merriweather',serif;font-size:32px;font-weight:700;color:#fff;display:block;line-height:1;min-height:36px}
+.cd-lbl{font-size:9px;letter-spacing:2px;color:rgba(255,255,255,.35);text-transform:uppercase;margin-top:6px;display:block}
+.cd-colon{font-size:32px;color:rgba(255,255,255,.3);font-weight:700;animation:colon 1s ease-in-out infinite;padding-bottom:14px;flex-shrink:0}
+@keyframes colon{0%,100%{opacity:.2}50%{opacity:1}}
+
+/* ── VIP URGENCY ── */
+.urgency{margin-bottom:12px}
+.urgency-txt{font-size:14px;font-weight:700;color:#f39c12;margin-bottom:8px}
+.progress-bar{height:8px;background:#1a2a3a;border-radius:100px;overflow:hidden}
+.progress-fill{height:100%;width:22%;background:linear-gradient(90deg,#e74c3c,#c0392b);border-radius:100px}
+
+/* ── TRUST ROW ── */
+.trust-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:16px 0;
+  border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);margin-bottom:28px}
+.tr-item{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6)}
+.tr-icon{font-size:18px}
+
+/* ── SECTION HEADING ── */
+.sec-head{text-align:center;margin-bottom:6px}
+.sec-title{font-family:'Merriweather',serif;font-size:22px;font-weight:700;color:#fff}
+.sec-title span{color:#d4af37}
+.sec-sub{font-size:13px;color:rgba(255,255,255,.4);margin-top:6px;line-height:1.5}
+
+/* ── TICKET WIDGET ── */
+.ticket-widget{
+  background:linear-gradient(160deg,#141f34,#0e1a2d);
+  border:1px solid rgba(212,175,55,.25);
+  border-radius:20px;overflow:hidden;margin:16px 0 12px
+}
+
+/* widget header */
+.tw-header{
+  background:linear-gradient(135deg,#1a2840,#142036);
+  padding:18px 18px 14px;
+  display:flex;align-items:flex-start;justify-content:space-between;gap:12px;
+}
+.tw-left{display:flex;align-items:center;gap:12px}
+.tw-ticket-icon{font-size:32px}
+.tw-label{font-weight:700;font-size:16px;color:#fff;line-height:1.3}
+.tw-price{font-size:13px;color:rgba(255,255,255,.5);margin-top:2px}
+.tw-right{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.sel-badge{
+  background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);
+  border-radius:50px;padding:8px 18px;font-size:14px;font-weight:700;color:#fff;
+  white-space:nowrap;text-align:center;
+}
+.sel-badge span{display:block;font-size:11px;font-weight:500;color:rgba(255,255,255,.5);margin-top:1px}
+.min-badge{
+  background:#1a2840;border:2px solid #d4af37;
+  border-radius:12px;padding:10px 14px;text-align:center;font-weight:700;
+  color:#d4af37;font-size:13px;line-height:1.3;white-space:nowrap;
+}
+.min-badge .warn-icon{display:block;font-size:16px;margin-bottom:2px}
+
+/* ticket list */
+.tw-list-wrap{
+  border:1.5px dashed rgba(212,175,55,.2);
+  border-radius:12px;margin:0 14px 14px;
+  overflow:hidden;max-height:380px;overflow-y:auto;
+  background:rgba(8,18,32,.5);
+}
+.tw-list-wrap::-webkit-scrollbar{width:4px}
+.tw-list-wrap::-webkit-scrollbar-track{background:transparent}
+.tw-list-wrap::-webkit-scrollbar-thumb{background:rgba(212,175,55,.3);border-radius:4px}
+
+.t-row{
+  display:flex;align-items:center;padding:13px 16px;
+  border-bottom:1px solid rgba(255,255,255,.04);
+  cursor:pointer;transition:background .2s;user-select:none;
+  -webkit-tap-highlight-color:transparent;
+}
+.t-row:last-child{border-bottom:none}
+.t-row:active{background:rgba(212,175,55,.06)}
+.t-row.sel{background:rgba(212,175,55,.08)}
+
+/* checkbox */
+.t-check{
+  width:22px;height:22px;border:2px solid rgba(255,255,255,.25);
+  border-radius:6px;flex-shrink:0;margin-right:14px;
+  display:flex;align-items:center;justify-content:center;
+  transition:all .2s;background:transparent;position:relative;
+}
+.t-row.sel .t-check{background:#d4af37;border-color:#d4af37}
+.t-check-mark{font-size:13px;font-weight:700;color:#000;opacity:0;transition:opacity .15s}
+.t-row.sel .t-check-mark{opacity:1}
+
+.t-num{flex:1;font-size:16px;font-weight:700;color:rgba(255,255,255,.9);letter-spacing:.5px}
+.t-row.sel .t-num{color:#d4af37}
+
+.t-price-badge{
+  background:rgba(212,175,55,.12);border:1px solid rgba(212,175,55,.2);
+  border-radius:50px;padding:5px 14px;font-size:13px;font-weight:700;
+  color:#d4af37;flex-shrink:0;
+}
+.t-row.sel .t-price-badge{background:rgba(212,175,55,.25);border-color:#d4af37}
+
+/* ── SELECTED PANEL ── */
+.sel-panel{display:none;padding:0 14px 14px}
+.sel-panel.show{display:block}
+.sel-info-row{display:flex;justify-content:space-between;align-items:center;
+  background:rgba(46,204,113,.06);border:1px solid rgba(46,204,113,.2);
+  border-radius:10px;padding:12px 16px;margin-bottom:10px}
+.sel-info-left{font-size:12px;color:rgba(255,255,255,.5)}
+.sel-info-right{font-size:14px;font-weight:700;color:#2ecc71}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.chip{
+  background:rgba(212,175,55,.1);border:1px solid rgba(212,175,55,.3);
+  border-radius:50px;padding:5px 12px;font-size:12px;font-weight:600;
+  color:#d4af37;display:flex;align-items:center;gap:5px
+}
+.chip-x{cursor:pointer;opacity:.7;font-size:15px;line-height:1}
+.chip-x:hover{opacity:1}
+.warn-min{
+  background:rgba(241,196,15,.08);border:1px solid rgba(241,196,15,.25);
+  border-radius:8px;padding:10px 14px;font-size:12px;font-weight:600;
+  color:#f1c40f;text-align:center;margin-bottom:10px;display:none
+}
+.warn-min.show{display:block}
+
+/* ── STICKY BOTTOM ── */
+.sticky-bot{
+  position:fixed;bottom:0;left:0;right:0;z-index:200;
+  background:#0d1b2e;border-top:1px solid rgba(255,255,255,.08);
+  padding:10px 16px;
+}
+.sticky-inner{
+  max-width:480px;margin:0 auto;
+  display:flex;align-items:center;gap:12px
+}
+.sticky-left{flex:1}
+.sticky-count{font-size:11px;font-weight:700;letter-spacing:2px;
+  color:rgba(255,255,255,.4);text-transform:uppercase}
+.sticky-total{font-family:'Merriweather',serif;font-size:22px;font-weight:700;color:#d4af37;line-height:1.1}
+.sticky-total sub{font-size:13px;font-family:'Inter',sans-serif;font-weight:400;color:rgba(255,255,255,.35);margin-left:4px}
+.book-btn{
+  flex-shrink:0;display:flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);
+  border-radius:12px;padding:13px 20px;
+  font-size:15px;font-weight:700;color:rgba(255,255,255,.4);
+  cursor:not-allowed;transition:all .3s;white-space:nowrap;
+}
+.book-btn.active{
+  background:linear-gradient(135deg,#25d366,#128c7e);
+  border-color:transparent;color:#fff;cursor:pointer;
+  box-shadow:0 6px 20px rgba(37,211,102,.35)
+}
+.book-btn.active:active{transform:scale(.97)}
+.book-btn svg{width:18px;height:18px;flex-shrink:0}
+
+/* ── FLOATING WA ── */
+.wa-float{
+  position:fixed;bottom:80px;right:16px;z-index:300;
+  width:56px;height:56px;
+  background:linear-gradient(135deg,#25d366,#1aab57);
+  border-radius:50%;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 6px 24px rgba(37,211,102,.5);
+  cursor:pointer;border:none;
+  animation:wa-pulse 2.5s ease-in-out infinite;
+}
+.wa-float svg{width:28px;height:28px}
+@keyframes wa-pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+.wa-ring{position:absolute;border-radius:50%;border:2px solid rgba(37,211,102,.4);animation:ring 2s ease-out infinite}
+.wa-ring1{inset:-8px}
+.wa-ring2{inset:-16px;animation-delay:.5s;border-color:rgba(37,211,102,.2)}
+@keyframes ring{0%{transform:scale(1);opacity:1}100%{transform:scale(1.6);opacity:0}}
+
+/* ── POPUP ── */
+.overlay{
+  position:fixed;inset:0;background:rgba(0,0,0,.88);backdrop-filter:blur(12px);
+  z-index:999;display:flex;align-items:flex-end;justify-content:center;
+  opacity:0;pointer-events:none;transition:opacity .3s;
+}
+.overlay.on{opacity:1;pointer-events:all}
+.popup{
+  background:linear-gradient(160deg,#141f34,#0e1825);
+  border:1px solid rgba(212,175,55,.3);
+  border-radius:24px 24px 0 0;
+  padding:24px 20px 36px;width:100%;max-width:480px;
+  transform:translateY(100%);transition:transform .4s cubic-bezier(.34,1.2,.64,1);
+}
+.overlay.on .popup{transform:translateY(0)}
+.popup-handle{width:40px;height:4px;background:rgba(255,255,255,.15);
+  border-radius:2px;margin:0 auto 20px}
+.popup-emoji{font-size:44px;text-align:center;display:block;margin-bottom:8px}
+.popup-title{font-family:'Merriweather',serif;font-size:20px;font-weight:700;
+  color:#d4af37;text-align:center;margin-bottom:4px}
+.popup-sub{font-size:13px;color:rgba(255,255,255,.4);text-align:center;margin-bottom:18px}
+.popup-box{
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);
+  border-radius:12px;padding:14px 16px;max-height:160px;overflow-y:auto;
+  font-size:13px;color:rgba(255,255,255,.7);line-height:2;margin-bottom:14px;
+}
+.popup-box::-webkit-scrollbar{width:3px}
+.popup-box::-webkit-scrollbar-thumb{background:rgba(212,175,55,.3);border-radius:2px}
+.popup-total{
+  background:rgba(46,204,113,.08);border:1px solid rgba(46,204,113,.2);
+  border-radius:10px;padding:12px 16px;text-align:center;
+  font-size:16px;font-weight:700;color:#2ecc71;margin-bottom:18px
+}
+.popup-wa-btn{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  width:100%;padding:16px;
+  background:linear-gradient(135deg,#25d366,#128c7e);
+  border-radius:14px;border:none;color:#fff;
+  font-size:17px;font-weight:700;letter-spacing:.5px;
+  text-decoration:none;cursor:pointer;
+  box-shadow:0 8px 24px rgba(37,211,102,.35);
+  transition:all .2s
+}
+.popup-wa-btn:active{transform:scale(.97)}
+.popup-wa-btn svg{width:22px;height:22px}
+.popup-close{
+  display:block;width:100%;padding:14px;margin-top:10px;
+  background:transparent;border:1px solid rgba(255,255,255,.1);
+  border-radius:12px;color:rgba(255,255,255,.4);font-size:14px;
+  cursor:pointer;
+}
+
+/* ── RECENT BOOKINGS (fake social proof) ── */
+.bookings-strip{
+  background:rgba(255,255,255,.03);border-radius:10px;padding:10px 14px;
+  margin:16px 0;font-size:12px;color:rgba(255,255,255,.4);
+  display:flex;align-items:center;gap:8px;overflow:hidden;
+}
+.booking-dot{width:8px;height:8px;border-radius:50%;background:#2ecc71;flex-shrink:0}
+.booking-scroll{flex:1;overflow:hidden;white-space:nowrap}
+.booking-item{display:inline-block;animation:scroll-book 12s linear infinite}
+@keyframes scroll-book{0%{transform:translateX(100%)}100%{transform:translateX(-100%)}}
+
+.footer{text-align:center;font-size:11px;color:rgba(255,255,255,.15);padding:20px 0 8px;line-height:2}
+</style>
+</head>
+<body>
+
+<!-- RED TOP BAR -->
+<div class="top-bar">
+  <span class="top-bar-dot"></span>
+  LIVE DRAW — LIMITED TICKETS AVAILABLE
+</div>
+
+<div class="wrap">
+
+  <!-- HERO -->
+  <div class="hero">
+    <span class="crown">👑</span>
+    <h1 class="hero-title">Kerala Mega Jackpot</h1>
+    <div class="hero-sub">OFFICIAL GOVERNMENT LOTTERY ·<br>TRUSTED SINCE 1967</div>
+    <div class="prize-pill">🏆 First Prize ₹25 Crore</div>
+  </div>
+
+  <!-- COUNTDOWN -->
+  <div class="cd-wrap">
+    <div class="cd-label">DRAW CLOSES IN</div>
+    <div class="cd-boxes">
+      <div class="cd-box">
+        <span class="cd-num" id="cdH">00</span>
+        <div class="cd-lbl">HOURS</div>
+      </div>
+      <div class="cd-colon">:</div>
+      <div class="cd-box">
+        <span class="cd-num" id="cdM">15</span>
+        <div class="cd-lbl">MINS</div>
+      </div>
+      <div class="cd-colon">:</div>
+      <div class="cd-box">
+        <span class="cd-num" id="cdS">00</span>
+        <div class="cd-lbl">SECS</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VIP URGENCY -->
+  <div class="urgency">
+    <div class="urgency-txt">🔥 Only <span id="remaining">78</span> VIP Tickets Remaining!</div>
+    <div class="progress-bar"><div class="progress-fill" id="progFill"></div></div>
+  </div>
+
+  <!-- TRUST ROW -->
+  <div class="trust-row">
+    <div class="tr-item"><span class="tr-icon">🔒</span> 100% Secure</div>
+    <div class="tr-item"><span class="tr-icon">✅</span> Govt Certified</div>
+    <div class="tr-item"><span class="tr-icon">⚡</span> Instant Booking</div>
+    <div class="tr-item"><span class="tr-icon">💬</span> WhatsApp Support</div>
+  </div>
+
+  <!-- SECTION HEADING -->
+  <div class="sec-head">
+    <h2 class="sec-title">Select Your <span>Lucky Tickets</span></h2>
+    <p class="sec-sub">Tap to select · ₹40 per ticket · Multiple selections allowed</p>
+  </div>
+
+  <!-- TICKET WIDGET -->
+  <div class="ticket-widget">
+
+    <!-- Widget header -->
+    <div class="tw-header">
+      <div class="tw-left">
+        <span class="tw-ticket-icon">🎫</span>
+        <div>
+          <div class="tw-label">Select Tickets<br>(₹40 each)</div>
+        </div>
+      </div>
+      <div class="tw-right">
+        <div class="sel-badge"><span id="selCount">0</span><span>selected</span></div>
+        <div class="min-badge" id="minBadge"><span class="warn-icon">⚠️</span>Min.<br>3<br>Required</div>
+      </div>
+    </div>
+
+    <!-- Ticket list -->
+    <div class="tw-list-wrap" id="ticketList"></div>
+
+    <!-- Selected panel (inside widget) -->
+    <div class="sel-panel" id="selPanel">
+      <div class="warn-min" id="warnMin">⚠️ Minimum 3 Tickets select karein!</div>
+      <div class="sel-info-row">
+        <div class="sel-info-left">Selected Tickets</div>
+        <div class="sel-info-right" id="selTotal">₹0</div>
+      </div>
+      <div class="chips" id="chips"></div>
+    </div>
+
+  </div>
+
+  <!-- RECENT BOOKINGS -->
+  <div class="bookings-strip">
+    <div class="booking-dot"></div>
+    <div class="booking-scroll">
+      <span class="booking-item">
+        🎉 Rahul from Delhi booked #KL362255 · 3m ago &nbsp;&nbsp;&nbsp;
+        Priya from Mumbai booked #KL481923 · 7m ago &nbsp;&nbsp;&nbsp;
+        Suresh from Kerala booked #KL736281 · 12m ago &nbsp;&nbsp;&nbsp;
+        Amit from Bangalore booked #KL294716 · 18m ago
+      </span>
+    </div>
+  </div>
+
+  <div class="footer">
+    © 2026 Kerala State Lotteries Department · All Rights Reserved<br>
+    Authorized by Government of Kerala · Draw Date: 07 July 2026
+  </div>
+</div>
+
+<!-- STICKY BOTTOM BAR -->
+<div class="sticky-bot">
+  <div class="sticky-inner">
+    <div class="sticky-left">
+      <div class="sticky-count"><span id="botCount">0</span> TICKETS SELECTED</div>
+      <div class="sticky-total"><span id="botTotal">₹0</span> <sub>total</sub></div>
+    </div>
+    <button class="book-btn" id="bookBtn" onclick="openPopup()">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.122 1.532 5.862L0 24l6.302-1.508A11.956 11.956 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.805 9.805 0 01-5.044-1.394l-.361-.214-3.741.894.948-3.647-.237-.376A9.793 9.793 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+      Book on WhatsApp
+    </button>
+  </div>
+</div>
+
+<!-- FLOATING WA -->
+<button class="wa-float" onclick="floatWaClick()">
+  <div class="wa-ring wa-ring1"></div>
+  <div class="wa-ring wa-ring2"></div>
+  <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.122 1.532 5.862L0 24l6.302-1.508A11.956 11.956 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.805 9.805 0 01-5.044-1.394l-.361-.214-3.741.894.948-3.647-.237-.376A9.793 9.793 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+</button>
+
+<!-- POPUP -->
+<div class="overlay" id="overlay" onclick="overlayClick(event)">
+  <div class="popup">
+    <div class="popup-handle"></div>
+    <span class="popup-emoji">🎉</span>
+    <div class="popup-title">Booking Summary</div>
+    <p class="popup-sub">Aapke selected lucky tickets ready hain!</p>
+    <div class="popup-box" id="popupTickets"></div>
+    <div class="popup-total" id="popupTotal">Total: ₹0</div>
+    <a class="popup-wa-btn" id="popupWaLink" href="#" target="_blank">
+      <svg viewBox="0 0 24 24" fill="white" width="22" height="22"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.122 1.532 5.862L0 24l6.302-1.508A11.956 11.956 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.805 9.805 0 01-5.044-1.394l-.361-.214-3.741.894.948-3.647-.237-.376A9.793 9.793 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+      Confirm on WhatsApp
+    </a>
+    <button class="popup-close" onclick="closePopup()">Cancel</button>
+  </div>
+</div>
+
+<script>
+const ALL_TICKETS = [
+  "KL341582","KL764913","KL928475","KL516284","KL873621","KL295746","KL681359","KL947218",
+  "KL452786","KL719534","KL186925","KL538471","KL862143","KL274698","KL615827","KL934562",
+  "KL357914","KL781246","KL149638","KL526893","KL894315","KL238761","KL671924","KL915487",
+  "KL364275","KL748651","KL125896","KL593742","KL827419","KL461358","KL752184","KL198563",
+  "KL534927","KL876241","KL243695","KL689714","KL912856","KL375428","KL741963","KL156284",
+  "KL528619","KL863574","KL297431","KL614895","KL958372","KL342167","KL785249","KL129684",
+  "KL567913","KL894627","KL236148","KL671385","KL918264","KL354792","KL742518","KL185436",
+  "KL539721","KL862954","KL274183","KL615349","KL947861","KL328574","KL781692","KL146257",
+  "KL523918","KL896731","KL241685","KL679342","KL915728","KL364891","KL748235","KL128467",
+  "KL593186","KL827654","KL451972","KL762849","KL194325","KL536718","KL871543","KL239864",
+  "KL685127","KL914362","KL378251","KL741528","KL156973","KL524186","KL863927","KL297615",
+  "KL618452","KL952734","KL341896","KL785613","KL129357","KL567248","KL894162","KL236975",
+  "KL671548","KL918735","KL354268","KL742891","KL185729","KL539164","KL862317","KL274951",
+  "KL615784","KL947523","KL328169","KL781354","KL146892","KL523674","KL896245","KL241937",
+  "KL679815","KL915346","KL364528","KL748913","KL128795","KL593421","KL827136","KL451689",
+  "KL762315","KL194857","KL536241","KL871926","KL239417","KL685394","KL914785","KL378614",
+  "KL741285","KL156428","KL524793","KL863152","KL297864","KL618937","KL952481","KL341725",
+  "KL785964","KL129518","KL567381","KL894753","KL236814","KL671259","KL918546","KL354981",
+  "KL742163","KL185294","KL539876","KL862495","KL274316","KL615928","KL947132","KL328745",
+  "KL781529","KL146385","KL523861","KL896574","KL241768","KL679231","KL915874","KL364152",
+  "KL748396","KL128954","KL593617","KL827495","KL451823","KL762148","KL194536","KL536892",
+  "KL871254","KL239685","KL685741","KL914253","KL378926","KL741659","KL156742","KL524318",
+  "KL863745","KL297153","KL618274","KL952816","KL341268","KL785432","KL129876","KL567124",
+  "KL894381","KL236597","KL671843","KL918352","KL354617","KL742985","KL185643","KL539218",
+  "KL862731","KL274865","KL615243","KL947685","KL328951","KL781463","KL146729","KL523147",
+  "KL896328","KL241583","KL679524","KL915268","KL364719","KL748125","KL128346","KL593874",
+  "KL827561","KL451294","KL762983","KL194268","KL536475","KL871638","KL239751","KL685912",
+  "KL914637","KL378145","KL741892","KL156319","KL524681","KL863294","KL297548","KL618795",
+  "KL952163","KL341957","KL785126","KL129463","KL567892","KL894216","KL236741","KL671592",
+  "KL918473","KL354126","KL742638","KL185971","KL539642","KL862158","KL274539","KL615871",
+  "KL947326","KL328614","KL781935","KL146518","KL523794","KL896153","KL241896","KL679348",
+  "KL915632","KL364287","KL748561","KL128639","KL593258","KL827943","KL451768","KL762451",
+  "KL194783","KL536129","KL871495","KL239168","KL685273","KL914528","KL378592","KL741326",
+  "KL156895","KL524937","KL863418","KL297681","KL618543","KL952378","KL341684","KL785291",
+  "KL129745","KL567435","KL894572","KL236189","KL671428","KL918625","KL354873","KL742519",
+  "KL185362","KL539485","KL862943","KL274128","KL615496","KL947851","KL328476","KL781248",
+  "KL146973","KL523685","KL896417","KL241354","KL679862","KL915483","KL364951","KL748273",
+  "KL128581","KL593746","KL827314","KL451936","KL762594","KL194625","KL536784","KL871362",
+  "KL239546","KL685418","KL914862","KL378269","KL741573","KL156234","KL524869","KL863571",
+  "KL297324","KL618159","KL952647"
+];
+
+const PRICE = 40, MIN = 3, WA = "919693297384";
+let selected = new Set();
+
+// ── BUILD LIST ──
+const list = document.getElementById('ticketList');
+ALL_TICKETS.forEach(t => {
+  const row = document.createElement('div');
+  row.className = 't-row';
+  row.id = 'r-' + t;
+  row.innerHTML = `
+    <div class="t-check"><span class="t-check-mark">✓</span></div>
+    <div class="t-num">${t}</div>
+    <div class="t-price-badge">₹${PRICE}</div>
+  `;
+  row.addEventListener('click', () => toggle(t));
+  list.appendChild(row);
+});
+
+// ── LIVE COUNTDOWN (15 minutes) ──
+window.onload = function(){
+  var end = Date.now() + 15 * 60 * 1000;
+  function tick(){
+    var d = Math.max(0, end - Date.now());
+    var h = Math.floor(d / 3600000); d = d % 3600000;
+    var m = Math.floor(d / 60000);   d = d % 60000;
+    var s = Math.floor(d / 1000);
+    document.getElementById('cdH').textContent = h < 10 ? '0'+h : ''+h;
+    document.getElementById('cdM').textContent = m < 10 ? '0'+m : ''+m;
+    document.getElementById('cdS').textContent = s < 10 ? '0'+s : ''+s;
+  }
+  tick();
+  setInterval(tick, 1000);
+};
+
+// ── TOGGLE ──
+function toggle(t) {
+  const row = document.getElementById('r-' + t);
+  if(selected.has(t)) {
+    selected.delete(t);
+    row.classList.remove('sel');
+  } else {
+    selected.add(t);
+    row.classList.add('sel');
+  }
+  update();
+}
+
+function removeChip(t) {
+  selected.delete(t);
+  const row = document.getElementById('r-' + t);
+  if(row) row.classList.remove('sel');
+  update();
+}
+
+// ── UPDATE UI ──
+function update() {
+  const n = selected.size, sel = [...selected];
+  document.getElementById('selCount').textContent = n;
+  document.getElementById('botCount').textContent = n;
+  document.getElementById('botTotal').textContent = '₹' + (n * PRICE).toLocaleString('en-IN');
+  document.getElementById('selTotal').textContent = '₹' + (n * PRICE).toLocaleString('en-IN');
+
+  const minBadge = document.getElementById('minBadge');
+  const panel = document.getElementById('selPanel');
+  const warnMin = document.getElementById('warnMin');
+  const btn = document.getElementById('bookBtn');
+
+  if(n > 0) {
+    panel.classList.add('show');
+    warnMin.classList.toggle('show', n < MIN);
+    document.getElementById('chips').innerHTML = sel.map(t =>
+      `<div class="chip">${t}<span class="chip-x" onclick="removeChip('${t}')">×</span></div>`
+    ).join('');
+  } else {
+    panel.classList.remove('show');
+    warnMin.classList.remove('show');
+  }
+
+  if(n >= MIN) {
+    btn.classList.add('active');
+    minBadge.style.display = 'none';
+  } else {
+    btn.classList.remove('active');
+    minBadge.style.display = 'block';
+  }
+}
+
+// ── POPUP ──
+function openPopup() {
+  if(selected.size < MIN) return;
+  const sel = [...selected];
+  document.getElementById('popupTickets').innerHTML = sel.join('<br>');
+  document.getElementById('popupTotal').textContent = `Total: ₹${(sel.length * PRICE).toLocaleString('en-IN')} (${sel.length} tickets)`;
+  const msg = encodeURIComponent(
+    `🎟️ *Kerala Mega Jackpot Booking*\n\n` +
+    `Selected Tickets (${sel.length}):\n${sel.join(', ')}\n\n` +
+    `💰 Total Amount: ₹${sel.length * PRICE}\n\nKripya meri booking confirm karein! 🙏`
+  );
+  document.getElementById('popupWaLink').href = `https://wa.me/${WA}?text=${msg}`;
+  document.getElementById('overlay').classList.add('on');
+  document.body.style.overflow = 'hidden';
+}
+function closePopup() {
+  document.getElementById('overlay').classList.remove('on');
+  document.body.style.overflow = '';
+}
+function overlayClick(e) {
+  if(e.target === document.getElementById('overlay')) closePopup();
+}
+function floatWaClick() {
+  if(selected.size >= MIN) openPopup();
+  else {
+    const list = document.getElementById('ticketList');
+    list.scrollIntoView({behavior:'smooth', block:'center'});
+  }
+}
+</script>
+</body>
+</html>

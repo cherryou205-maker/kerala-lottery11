@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Kerala Lottery Admin</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#08111f;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.card{
+width:360px;
+background:#111c2e;
+padding:30px;
+border-radius:20px;
+box-shadow:0 0 35px rgba(0,0,0,.5);
+border:1px solid rgba(255,215,0,.2);
+}
+
+h2{
+text-align:center;
+color:#ffd700;
+margin-bottom:20px;
+}
+
+input{
+width:100%;
+padding:14px;
+margin-top:12px;
+border:none;
+outline:none;
+border-radius:10px;
+background:#1b2b45;
+color:white;
+font-size:16px;
+}
+
+button{
+width:100%;
+padding:14px;
+margin-top:18px;
+border:none;
+border-radius:10px;
+background:#25D366;
+color:white;
+font-size:17px;
+font-weight:bold;
+cursor:pointer;
+}
+
+button:hover{
+background:#1db954;
+}
+
+#panel{
+display:none;
+}
+
+.success{
+margin-top:15px;
+text-align:center;
+color:#00ff88;
+font-weight:bold;
+}
+
+small{
+display:block;
+margin-top:10px;
+color:#aaa;
+text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<div id="login">
+
+<h2>🔐 Admin Login</h2>
+
+<input
+type="password"
+id="password"
+placeholder="Enter Password">
+
+<button onclick="login()">
+Login
+</button>
+
+</div>
+
+<div id="panel">
+
+<h2>📱 WhatsApp Number</h2>
+
+<input
+type="text"
+id="number"
+placeholder="919999999999">
+
+<button id="save">
+Update Number
+</button>
+
+<div class="success" id="msg"></div>
+
+<small>
+Firebase Connected
+</small>
+
+</div>
+
+</div>
+
+<script>
+
+function login(){
+
+if(document.getElementById("password").value=="123456"){
+
+document.getElementById("login").style.display="none";
+document.getElementById("panel").style.display="block";
+
+}else{
+
+alert("Wrong Password");
+
+}
+
+}
+
+</script>
+
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+
+import {
+getDatabase,
+ref,
+set,
+get
+}
+
+from "https://www.gstatic.com/firebasejs/12.0.0/firebase-database.js";
+
+const firebaseConfig={
+
+apiKey:"AIzaSyAEneK1lpbWxVbvWaFrQ4mQU_2tEbszrV0",
+
+authDomain:"kerala-lottery-11.firebaseapp.com",
+
+databaseURL:"https://kerala-lottery-11-default-rtdb.firebaseio.com",
+
+projectId:"kerala-lottery-11",
+
+storageBucket:"kerala-lottery-11.firebasestorage.app",
+
+messagingSenderId:"819997467085",
+
+appId:"1:819997467085:web:0fc3c99362e0d1e45e6484"
+
+};
+
+const app=initializeApp(firebaseConfig);
+
+const db=getDatabase(app);
+
+const number=document.getElementById("number");
+
+get(ref(db,"whatsapp")).then((snap)=>{
+
+if(snap.exists()){
+
+number.value=snap.val().number;
+
+}
+
+});
+
+document.getElementById("save").onclick=()=>{
+
+set(ref(db,"whatsapp"),{
+
+number:number.value
+
+}).then(()=>{
+
+document.getElementById("msg").innerHTML="✅ Number Updated Successfully";
+
+});
+
+};
+
+</script>
+
+</body>
+</html>

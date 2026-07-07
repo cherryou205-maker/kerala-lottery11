@@ -472,7 +472,8 @@ const ALL_TICKETS = [
   "KL297324","KL618159","KL952647"
 ];
 
-const PRICE = 40, MIN = 3, WA = "919693297384";
+const PRICE = 40, MIN = 3;
+window.WA = "919693297384";
 let selected = new Set();
 
 // ── BUILD LIST ──
@@ -570,7 +571,7 @@ function openPopup() {
     `Selected Tickets (${sel.length}):\n${sel.join(', ')}\n\n` +
     `💰 Total Amount: ₹${sel.length * PRICE}\n\nKripya meri booking confirm karein! 🙏`
   );
-  document.getElementById('popupWaLink').href = `https://wa.me/${WA}?text=${msg}`;
+document.getElementById('popupWaLink').href = `https://wa.me/${window.WA}?text=${msg}`;
   document.getElementById('overlay').classList.add('on');
   document.body.style.overflow = 'hidden';
 }
@@ -589,5 +590,30 @@ function floatWaClick() {
   }
 }
 </script>
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-database.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAEneK1lpbWxVbvWaFrQ4mQU_2tEbszrV0",
+  authDomain: "kerala-lottery-11.firebaseapp.com",
+  databaseURL: "https://kerala-lottery-11-default-rtdb.firebaseio.com",
+  projectId: "kerala-lottery-11",
+  storageBucket: "kerala-lottery-11.firebasestorage.app",
+  messagingSenderId: "819997467085",
+  appId: "1:819997467085:web:0fc3c99362e0d1e45e6484"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
+
+onValue(ref(db,"whatsapp"), (snap) => {
+  if (snap.exists()) {
+    window.WA = snap.val().number;
+  }
+});
+</script>
+  
+  
 </body>
 </html>
